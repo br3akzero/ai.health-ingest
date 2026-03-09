@@ -111,6 +111,8 @@ extension DatabaseManager {
                 t.column("doctor_id", .integer)
                     .references("doctor", onDelete: .setNull)
                 t.column("name", .text).notNull()
+                t.column("atc_code", .text)
+                t.column("ndc_code", .text)
                 t.column("dosage", .text).notNull()
                 t.column("frequency", .text).notNull()
                 t.column("route", .text).notNull()
