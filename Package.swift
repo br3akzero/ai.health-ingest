@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "HealthCheck",
     platforms: [
-        .macOS(.v15)
+        .macOS(.v26)
     ],
     dependencies: [
         .package(url: "https://github.com/modelcontextprotocol/swift-sdk.git", from: "0.11.0"),
