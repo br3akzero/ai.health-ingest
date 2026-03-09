@@ -22,5 +22,12 @@ let package = Package(
                 "PDF"
             ]
         ),
+        .testTarget(
+            name: "HealthCheckTests",
+            dependencies: [
+                "HealthCheck",
+                .product(name: "GRDB", package: "GRDB.swift")
+            ]
+        ),
     ]
 )
