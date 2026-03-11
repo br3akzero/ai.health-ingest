@@ -1,5 +1,6 @@
 import Foundation
 import GRDB
+import MCP
 @testable import HealthCheck
 @testable import PDF
 
@@ -65,6 +66,22 @@ func makeReconciledPage(
         paragraphs: paragraphs,
         detectedData: []
     )
+}
+
+func extractId(from result: CallTool.Result?) -> Int64? {
+    guard let result,
+          case .text(let json) = result.content.first else { return nil }
+    guard let data = json.data(using: .utf8),
+          let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+          let id = dict["id"] as? Int64 else { return nil }
+    return id
+}
+
+func extractJSON(from result: CallTool.Result?) -> [String: Any]? {
+    guard let result,
+          case .text(let json) = result.content.first,
+          let data = json.data(using: .utf8) else { return nil }
+    return try? JSONSerialization.jsonObject(with: data) as? [String: Any]
 }
 
 func makeDocument(patientId: Int64, fileHash: String = "abc123") -> Document {
