@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "healthcheck": {
+      "command": "/Users/falcon/Developer/Personal/HealthCheck/.build/debug/HealthCheck",
+      "args": [],
+      "cwd": "/Users/falcon/Developer/Personal/HealthCheck"
+    }
+  }
+}
