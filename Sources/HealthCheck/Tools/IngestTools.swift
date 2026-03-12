@@ -10,7 +10,7 @@ struct IngestTools {
             Tool(
                 name: "ingest_document",
                 description: "Ingests a PDF document: extracts text (PDFKit + Vision OCR), reconciles, chunks, and stores. Returns document ID and status. Detects duplicates by SHA-256 hash.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "file_path": .object([
                         "type": "string",
                         "description": "Absolute path to the PDF file"
@@ -24,7 +24,7 @@ struct IngestTools {
             Tool(
                 name: "get_document_text",
                 description: "Returns the raw text and chunks for a document. Use this to read document content before extracting clinical entities.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "document_id": .object([
                         "type": "integer",
                         "description": "ID of the document to retrieve text for"

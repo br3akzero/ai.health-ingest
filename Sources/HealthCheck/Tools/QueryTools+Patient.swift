@@ -8,14 +8,14 @@ extension QueryTools {
             Tool(
                 name: "get_patient_summary",
                 description: "Get a comprehensive patient summary: demographics, active diagnoses, current medications, allergies, and recent encounters/labs.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 ])
             ),
             Tool(
                 name: "list_patients",
                 description: "List all patients with basic demographics.",
-                inputSchema: .object([:])
+                inputSchema: schema([:])
             ),
         ]
     }

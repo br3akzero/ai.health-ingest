@@ -7,7 +7,7 @@ extension CRUDClinicalTools {
         [Tool(
             name: "create_vital_sign",
             description: "Create a new vital sign measurement. Returns the vital sign ID.",
-            inputSchema: .object([
+            inputSchema: schema([
                 "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 "encounter_id": .object(["type": "integer", "description": "Encounter ID"]),
                 "vital_type": .object(["type": "string", "description": "Type (blood_pressure, heart_rate, temperature, respiratory_rate, oxygen_saturation, weight, height, bmi)"]),

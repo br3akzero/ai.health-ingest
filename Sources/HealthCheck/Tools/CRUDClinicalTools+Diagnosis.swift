@@ -7,7 +7,7 @@ extension CRUDClinicalTools {
         [Tool(
             name: "create_diagnosis",
             description: "Create a new diagnosis. Returns the diagnosis ID.",
-            inputSchema: .object([
+            inputSchema: schema([
                 "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 "encounter_id": .object(["type": "integer", "description": "Encounter ID"]),
                 "icd_code": .object(["type": "string", "description": "ICD-10 code"]),

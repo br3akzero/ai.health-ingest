@@ -8,7 +8,7 @@ extension QueryTools {
             Tool(
                 name: "get_health_timeline",
                 description: "Get a unified chronological timeline of all health events for a patient. Combines encounters, diagnoses, labs, medications, vitals, procedures, immunizations, and imaging into a single ordered view.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                     "date_from": .object(["type": "string", "description": "Start date ISO 8601 (optional)"]),
                     "date_to": .object(["type": "string", "description": "End date ISO 8601 (optional)"]),

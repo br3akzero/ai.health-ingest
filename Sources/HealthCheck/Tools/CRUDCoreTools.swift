@@ -10,7 +10,7 @@ struct CRUDCoreTools {
             Tool(
                 name: "upsert_patient",
                 description: "Create or update a patient. If id is provided, updates the existing record. Returns the patient ID.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "id": .object(["type": "integer", "description": "Patient ID (omit to create new)"]),
                     "first_name": .object(["type": "string", "description": "First name"]),
                     "last_name": .object(["type": "string", "description": "Last name"]),
@@ -22,7 +22,7 @@ struct CRUDCoreTools {
             Tool(
                 name: "upsert_facility",
                 description: "Create or update a facility. If id is provided, updates the existing record. Returns the facility ID.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "id": .object(["type": "integer", "description": "Facility ID (omit to create new)"]),
                     "name": .object(["type": "string", "description": "Facility name"]),
                     "facility_type": .object(["type": "string", "description": "Type (hospital, clinic, lab, pharmacy, imaging_center)"]),
@@ -34,7 +34,7 @@ struct CRUDCoreTools {
             Tool(
                 name: "upsert_doctor",
                 description: "Create or update a doctor. If id is provided, updates the existing record. Returns the doctor ID.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "id": .object(["type": "integer", "description": "Doctor ID (omit to create new)"]),
                     "first_name": .object(["type": "string", "description": "First name"]),
                     "last_name": .object(["type": "string", "description": "Last name"]),
@@ -44,7 +44,7 @@ struct CRUDCoreTools {
             Tool(
                 name: "link_doctor_to_facility",
                 description: "Link a doctor to a facility. Creates the relationship if it doesn't exist.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "facility_id": .object(["type": "integer", "description": "Facility ID"]),
                     "doctor_id": .object(["type": "integer", "description": "Doctor ID"]),
                 ])

@@ -7,7 +7,7 @@ extension CRUDClinicalTools {
         [Tool(
             name: "create_imaging",
             description: "Create a new imaging record. Returns the imaging ID.",
-            inputSchema: .object([
+            inputSchema: schema([
                 "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 "encounter_id": .object(["type": "integer", "description": "Encounter ID"]),
                 "doctor_id": .object(["type": "integer", "description": "Doctor ID"]),

@@ -10,7 +10,7 @@ struct DatabaseTools {
             Tool(
                 name: "get_schema_info",
                 description: "Returns all table names with their columns and types. Use this to discover the database structure.",
-                inputSchema: .object([:])
+                inputSchema: schema([:])
             )
         ]
     }

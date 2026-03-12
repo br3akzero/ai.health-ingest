@@ -7,7 +7,7 @@ extension CRUDClinicalTools {
         [Tool(
             name: "create_procedure",
             description: "Create a new procedure record. Returns the procedure ID.",
-            inputSchema: .object([
+            inputSchema: schema([
                 "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 "encounter_id": .object(["type": "integer", "description": "Encounter ID"]),
                 "doctor_id": .object(["type": "integer", "description": "Doctor ID"]),

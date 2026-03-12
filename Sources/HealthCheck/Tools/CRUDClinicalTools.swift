@@ -26,6 +26,12 @@ struct CRUDClinicalTools {
     }
 }
 
+// MARK: - Schema Helper
+
+func schema(_ properties: [String: Value]) -> Value {
+    .object(["type": .string("object"), "properties": .object(properties)])
+}
+
 // MARK: - Value Helpers
 
 func stringArg(_ args: [String: Value], _ key: String) -> String? {

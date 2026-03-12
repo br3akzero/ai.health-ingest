@@ -7,7 +7,7 @@ extension CRUDClinicalTools {
         [Tool(
             name: "create_allergy",
             description: "Create a new allergy record. Returns the allergy ID.",
-            inputSchema: .object([
+            inputSchema: schema([
                 "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 "allergen": .object(["type": "string", "description": "Allergen name"]),
                 "allergen_type": .object(["type": "string", "description": "Type (drug, food, environmental, other)"]),

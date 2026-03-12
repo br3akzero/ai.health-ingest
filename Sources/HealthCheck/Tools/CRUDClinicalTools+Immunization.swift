@@ -7,7 +7,7 @@ extension CRUDClinicalTools {
         [Tool(
             name: "create_immunization",
             description: "Create a new immunization record. Returns the immunization ID.",
-            inputSchema: .object([
+            inputSchema: schema([
                 "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 "vaccine_name": .object(["type": "string", "description": "Vaccine name"]),
                 "vaccine_code": .object(["type": "string", "description": "CVX vaccine code"]),

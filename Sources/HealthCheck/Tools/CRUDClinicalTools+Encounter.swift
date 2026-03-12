@@ -7,7 +7,7 @@ extension CRUDClinicalTools {
         [Tool(
             name: "create_encounter",
             description: "Create a new encounter (visit/exam). Returns the encounter ID.",
-            inputSchema: .object([
+            inputSchema: schema([
                 "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 "facility_id": .object(["type": "integer", "description": "Facility ID"]),
                 "doctor_id": .object(["type": "integer", "description": "Doctor ID"]),

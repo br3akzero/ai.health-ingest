@@ -8,26 +8,26 @@ extension QueryTools {
             Tool(
                 name: "get_doctor",
                 description: "Get doctor details including linked facilities.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "doctor_id": .object(["type": "integer", "description": "Doctor ID"]),
                 ])
             ),
             Tool(
                 name: "list_doctors",
                 description: "List all doctors with their specialties.",
-                inputSchema: .object([:])
+                inputSchema: schema([:])
             ),
             Tool(
                 name: "get_facility",
                 description: "Get facility details including linked doctors.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "facility_id": .object(["type": "integer", "description": "Facility ID"]),
                 ])
             ),
             Tool(
                 name: "list_facilities",
                 description: "List all facilities with their types.",
-                inputSchema: .object([:])
+                inputSchema: schema([:])
             ),
         ]
     }

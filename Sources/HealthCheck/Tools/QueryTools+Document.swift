@@ -8,7 +8,7 @@ extension QueryTools {
             Tool(
                 name: "search_documents",
                 description: "Full-text search across document chunks. Returns matching documents with relevant chunk excerpts.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "query": .object(["type": "string", "description": "Search text to match against document chunks"]),
                     "document_type": .object(["type": "string", "description": "Filter by type: lab_report/prescription/discharge/imaging/referral/insurance/other (optional)"]),
                     "date_from": .object(["type": "string", "description": "Start date ISO 8601 (optional)"]),
@@ -19,7 +19,7 @@ extension QueryTools {
             Tool(
                 name: "get_document",
                 description: "Get document metadata, summary, and optionally all chunks.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "document_id": .object(["type": "integer", "description": "Document ID"]),
                     "include_chunks": .object(["type": "boolean", "description": "Include all text chunks (default: false)"]),
                 ])
@@ -27,7 +27,7 @@ extension QueryTools {
             Tool(
                 name: "list_documents",
                 description: "List all documents with optional filters.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "patient_id": .object(["type": "integer", "description": "Filter by patient (optional)"]),
                     "document_type": .object(["type": "string", "description": "Filter by type (optional)"]),
                     "processing_status": .object(["type": "string", "description": "Filter by status: pending/pending_review/processing/completed/failed (optional)"]),

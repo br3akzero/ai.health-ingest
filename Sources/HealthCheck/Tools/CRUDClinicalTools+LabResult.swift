@@ -7,7 +7,7 @@ extension CRUDClinicalTools {
         [Tool(
             name: "create_lab_result",
             description: "Create a new lab result. Returns the lab result ID.",
-            inputSchema: .object([
+            inputSchema: schema([
                 "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 "encounter_id": .object(["type": "integer", "description": "Encounter ID"]),
                 "test_name": .object(["type": "string", "description": "Test name (e.g. Glucose, HbA1c)"]),

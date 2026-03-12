@@ -7,7 +7,7 @@ extension CRUDClinicalTools {
         [Tool(
             name: "create_medication",
             description: "Create a new medication/prescription. Returns the medication ID.",
-            inputSchema: .object([
+            inputSchema: schema([
                 "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 "diagnosis_id": .object(["type": "integer", "description": "Diagnosis ID"]),
                 "doctor_id": .object(["type": "integer", "description": "Prescribing doctor ID"]),

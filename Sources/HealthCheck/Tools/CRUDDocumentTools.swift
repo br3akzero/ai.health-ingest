@@ -10,7 +10,7 @@ struct CRUDDocumentTools {
             Tool(
                 name: "store_extraction_results",
                 description: "Batch-insert extracted entities from AI analysis. Links raw text spans to clinical records via the extracted_entity table. Returns count of entities stored.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "document_id": .object(["type": "integer", "description": "Document ID"]),
                     "entities": .object([
                         "type": "array",
@@ -32,7 +32,7 @@ struct CRUDDocumentTools {
             Tool(
                 name: "save_document_summary",
                 description: "Store an AI-generated summary for a document. Returns the summary ID.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "document_id": .object(["type": "integer", "description": "Document ID"]),
                     "summary_type": .object(["type": "string", "description": "Type (brief, detailed, clinical)"]),
                     "content": .object(["type": "string", "description": "Summary content"]),

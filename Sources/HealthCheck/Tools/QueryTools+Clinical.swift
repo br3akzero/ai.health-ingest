@@ -8,7 +8,7 @@ extension QueryTools {
             Tool(
                 name: "get_lab_history",
                 description: "Get lab results for a patient, optionally filtered by test name and date range. Results ordered chronologically.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                     "test_name": .object(["type": "string", "description": "Filter by test name (optional)"]),
                     "date_from": .object(["type": "string", "description": "Start date ISO 8601 (optional)"]),
@@ -18,7 +18,7 @@ extension QueryTools {
             Tool(
                 name: "get_medication_list",
                 description: "Get medications for a patient. Optionally filter to active-only. Includes prescribing doctor and linked diagnosis.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                     "active_only": .object(["type": "boolean", "description": "Only active medications (default: false)"]),
                 ])
@@ -26,14 +26,14 @@ extension QueryTools {
             Tool(
                 name: "get_encounter",
                 description: "Get a full encounter with all linked clinical data: diagnoses, labs, vitals, procedures, medications.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "encounter_id": .object(["type": "integer", "description": "Encounter ID"]),
                 ])
             ),
             Tool(
                 name: "get_diagnosis",
                 description: "Get diagnoses for a patient, optionally filtered by status (active/resolved/chronic/suspected).",
-                inputSchema: .object([
+                inputSchema: schema([
                     "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                     "status": .object(["type": "string", "description": "Filter by status (optional)"]),
                 ])
@@ -41,14 +41,14 @@ extension QueryTools {
             Tool(
                 name: "get_allergies",
                 description: "Get all allergies for a patient with severity, reaction, and status.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 ])
             ),
             Tool(
                 name: "get_immunization_history",
                 description: "Get full immunization/vaccine history for a patient, ordered by date.",
-                inputSchema: .object([
+                inputSchema: schema([
                     "patient_id": .object(["type": "integer", "description": "Patient ID"]),
                 ])
             ),
