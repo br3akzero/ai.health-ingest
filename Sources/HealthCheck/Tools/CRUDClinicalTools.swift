@@ -14,6 +14,7 @@ struct CRUDClinicalTools {
         switch params.name {
         case "create_encounter": return try await createEncounter(params)
         case "create_diagnosis": return try await createDiagnosis(params)
+        case "update_diagnosis": return try await updateDiagnosis(params)
         case "create_medication": return try await createMedication(params)
         case "update_medication": return try await updateMedication(params)
         case "create_lab_result": return try await createLabResult(params)
