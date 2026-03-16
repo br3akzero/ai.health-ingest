@@ -4,6 +4,11 @@
       "command": "/Users/falcon/Developer/Personal/HealthCheck/.build/debug/HealthCheck",
       "args": [],
       "cwd": "/Users/falcon/Developer/Personal/HealthCheck"
+    },
+    "airquality": {
+      "command": "/Users/falcon/Developer/Personal/HealthCheck/Agents/Tools/AirQuality/.build/debug/AirQuality",
+      "args": [],
+      "cwd": "/Users/falcon/Developer/Personal/HealthCheck/Agents/Tools/AirQuality"
     }
   }
 }
